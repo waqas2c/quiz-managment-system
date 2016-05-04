@@ -16,6 +16,7 @@ var nav = [
 var eventsRouter = require('./src/routes/eventRoutes')(nav);
 var judgeRouter = require('./src/routes/judgeRoutes')(nav);
 var participantRouter = require('./src/routes/participantRoutes')(nav);
+var compRouter = require('./src/routes/compRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views', './src/views');
@@ -26,13 +27,13 @@ app.set('view engine', 'ejs');
 app.use('/Events', eventsRouter);
 app.use('/Judges',judgeRouter);
 app.use('/Participants',participantRouter);
+app.use('/Competitions',compRouter);
 
 app.get('/', function (req, res) {
     res.render('index', {
         title: 'home', nav: nav
     });
 });
-
 
 app.listen(port, function (err) {
     console.log('running server on port ' + port);
