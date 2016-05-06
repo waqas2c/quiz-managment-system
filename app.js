@@ -3,9 +3,11 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/ecompetition');
 var db = mongoose.connection;
 var bodyParser = require('body-parser');
-var app = express();
 
-var port = process.env.PORT || 5000;
+
+var multer = require('multer');
+
+var PORT = process.env.PORT || 3000;
 // nav is used in evry template file
 var nav = [
     { Link: '/Events', Text: 'Events' },
@@ -15,16 +17,23 @@ var nav = [
     { Link: '/Contact', Text: 'Contact Us' }
 ];
 
+var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // ====================Require Routes ===============
 var eventsRouter = require('./src/routes/eventRoutes')(nav);
 var judgeRouter = require('./src/routes/judgeRoutes')(nav);
 var participantRouter = require('./src/routes/participantRoutes')(nav);
 var compRouter = require('./src/routes/compRoutes')(nav);
 
+
+// =============================================================
+
 app.use(express.static('public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+
 app.set('views', './src/views');
+
 
 app.set('view engine', 'ejs');
 
@@ -40,6 +49,6 @@ app.get('/', function (req, res) {
     });
 });
 
-app.listen(port, function (err) {
-    console.log('running server on port ' + port);
+app.listen(PORT, function (err) {
+    console.log('Server is Listening on PORT ' + PORT);
 });

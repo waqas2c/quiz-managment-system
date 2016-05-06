@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "express-handlebars": "^2.0.1",
     "jade": "^1.11.0",
     "mongodb": "^2.1.18",
-    "mongoose": "^4.4.14"
+    "mongoose": "^4.4.14",
+    "multer": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

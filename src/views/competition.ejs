@@ -41,34 +41,30 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <form class="form">
+                                        <form class="form" action="/Competitions" method="POST" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="nameField">Competition Name</label>
-                                                <input type="text" class="form-control" id="nameField" placeholder="Your Name" />
+                                                <input class="form-control" type="text" name="event_name" id="nameField" placeholder="Competition Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="categoryField">Category</label>
+                                                <input class="form-control" type="text" name="category" id="categoryField" placeholder="Category Name">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="emailField">Start Date</label>
-                                                <input type="email" class="form-control" id="emailField" placeholder="Your Email" />
+                                                <label for="startDateField">StartDate</label>
+                                                <input class="form-control" type="text" name="startDate" id="startDateField" placeholder="Starting Date">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="phoneField">End Date</label>
-                                                <input type="text" class="form-control" id="phoneField" placeholder="Your Phone Number" />
+                                                <label for="endDateField">End Date</label>
+                                                <input class="form-control" type="text" name="endDate" ,id="endDateField" placeholder="Ending Date">
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="descField">Category</label>
-                                                <textarea type="text" class="form-control" id="descField" placeholder="Your Comments"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputFile">File input</label>
-                                                <input type="file" id="exampleInputFile">
-                                                
-                                            </div>
 
-                                            <button type="submit" class="btn btn-primary">Submit</button> <button type="reset"
-                                                class="btn btn-default">Reset</button>
+                                            <label for="exampleInputFile">File input</label>
+                                            <input type="file" id="exampleInputFile" name="projectimage">
+                                            <input type="submit" value="Submit">
                                         </form>
                                     </div>
                                 </div>

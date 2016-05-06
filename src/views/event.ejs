@@ -47,14 +47,14 @@
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://cdn3.studentcompetitions.com/dragonfly_images/W1siZiIsIjIwMTYvMDMvMDkvMTYvMjcvMzYvNTkxL25vdHRpbmdoYW1fNTYwX3hfNDgwXzFfLnBuZyJdLFsicCIsInRodW1iIiwiMjgweDI0MCJdXQ" style="width:100px;height:100px" class="img-circle"></a>
+              <a class="story-title" href="#"><img alt="" src="<%=events[i].img.data %>" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
               <h3><%=events[i].name %></h3>
               <div class="row">
                 <div class="col-xs-9">
                   <h4><span class="label label-default"><%=events[i].category %></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><a href="/Events/<%=events[i]._id %>" class="text-muted">Read More</a></small>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><a href="/Events/<%=i %>" class="text-muted">Read More</a></small>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>

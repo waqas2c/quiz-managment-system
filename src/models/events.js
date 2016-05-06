@@ -1,8 +1,12 @@
+var express = require('express');
 var mongoose = require('mongoose');
+
 var Schema = mongoose.Schema;
 
-var EventShema = new Schema({
-    name: String,
+var eventModel = new Schema({
+    name: {
+        type: String
+    },
     startDate: {
         type: Date,
         default: Date.now
@@ -11,7 +15,13 @@ var EventShema = new Schema({
         type: Date,
         default: Date.now
     },
-    category: String
+    category: {
+        type: String
+    },
+    img: {
+        data: Buffer,
+        contentType: String,
+    }
 });
 
-module.exports = mongoose.model('Event',EventShema);
+module.exports = mongoose.model('Events', eventModel);
