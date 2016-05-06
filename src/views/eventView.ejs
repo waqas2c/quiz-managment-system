@@ -27,7 +27,11 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- /cont -->
+
+
+
+            </div>
 
 
             <div class="container">
@@ -40,28 +44,20 @@
 
 
 
-                                <!--event Details-->
+                                <!--events-->
                                 <div class="row">
                                     <br>
                                     <div class="col-md-2 col-sm-3 text-center">
-                                        <a class="story-title" href="#"><img alt="" src="http://cdn3.studentcompetitions.com/dragonfly_images/W1siZiIsIjIwMTYvMDMvMDkvMTYvMjcvMzYvNTkxL25vdHRpbmdoYW1fNTYwX3hfNDgwXzFfLnBuZyJdLFsicCIsInRodW1iIiwiMjgweDI0MCJdXQ"
-                                                style="width:400px;height:300px" class="img-thumbnail"></a>
+                                        <a class="story-title" href="#"><img alt="" src="<%=event.imgUrl %>" style="width:100px;height:100px" class="img-circle"></a>
                                     </div>
                                     <div class="col-md-10 col-sm-9">
                                         <h3><%=event.name %></h3>
                                         <div class="row">
                                             <div class="col-xs-9">
-                                                <div>
+                                                <h4><span class="label label-default"><%=event.category %></span></h4>
+                                                 <h4><span class="label label-default"><%=event.startDate.toDateString()  %></span></h4>
+                                                 <h4><span class="label label-default"><%=event.endDate.toDateString()  %></span></h4>
 
-                                                    <h4><span class="label label-default"><%=event.category %></span></h4>
-                                                    <h4>
-                                                   <h4><span class="label label-default"><%=event.startDate %></span></h4>
-                                                    <h4>
-                                                    <h4><span class="label label-default"><%=event.endDate %></span></h4>
-                                                    <h4>
-                  <!--<small style="font-family:courier,'new courier';" class="text-muted"><a href="#" class="text-muted">Read More</a></small>-->
-                  </h4>
-                                                </div>
                                             </div>
                                             <div class="col-xs-3"></div>
                                         </div>
@@ -70,7 +66,7 @@
                                 </div>
                                 <hr>
 
-                                <!-- /event Details-->
+                                <!-- /events-->
 
                                 <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
 

@@ -18,9 +18,8 @@ var eventModel = new Schema({
     category: {
         type: String
     },
-    img: {
-        data: Buffer,
-        contentType: String,
+    imgUrl: {
+        type: String
     }
 });
 

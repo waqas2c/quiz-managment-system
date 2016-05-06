@@ -21,8 +21,7 @@ var router = function (nav) {
                     nav: nav,
                     events: eventList
                 });
-                // res.contentType(eventList[0].img.contentType);
-                // res.send(eventList[0].img.data);
+                
             });
 
         })

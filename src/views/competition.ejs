@@ -41,7 +41,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <form class="form" action="/Competitions" method="POST" enctype="multipart/form-data">
+                                        <form class="form" action="/Competitions" method="POST">
                                             <div class="form-group">
                                                 <label for="nameField">Competition Name</label>
                                                 <input class="form-control" type="text" name="event_name" id="nameField" placeholder="Competition Name">
@@ -53,17 +53,21 @@
 
                                             <div class="form-group">
                                                 <label for="startDateField">StartDate</label>
-                                                <input class="form-control" type="text" name="startDate" id="startDateField" placeholder="Starting Date">
+                                                <input class="form-control" type="text" name="startDate" id="startDateField" placeholder="02-06-2016">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="endDateField">End Date</label>
-                                                <input class="form-control" type="text" name="endDate" ,id="endDateField" placeholder="Ending Date">
+                                                <input class="form-control" type="text" name="endDate" ,id="endDateField" placeholder="02-06-2016">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="imgField">Image Url</label>
+                                                <input class="form-control" type="text" name="imgUrl" ,id="imgField" placeholder="Post Image Url">
                                             </div>
 
 
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" id="exampleInputFile" name="projectimage">
+                                            <!--<label for="exampleInputFile">File input</label>-->
+                                            <!--<input type="file" id="exampleInputFile" name="projectimage">-->
                                             <input type="submit" value="Submit">
                                         </form>
                                     </div>

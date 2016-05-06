@@ -13,6 +13,7 @@ var nav = [
     { Link: '/Events', Text: 'Events' },
     { Link: '/Participants', Text: 'Participant' },
     { Link: '/Judges', Text: 'Judges' },
+     { Link: '/Competitions', Text: 'Competition' },
     { Link: '/About', Text: 'About Us' },
     { Link: '/Contact', Text: 'Contact Us' }
 ];
