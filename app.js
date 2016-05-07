@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ====================Require Routes ===============
 var eventsRouter = require('./src/routes/eventRoutes')(nav);
 var judgeRouter = require('./src/routes/judgeRoutes')(nav);
-var participantRouter = require('./src/routes/participantRoutes')(nav);
+var participantRouter = require('./src/routes/participantRoutes')(nav,app);
 var compRouter = require('./src/routes/compRoutes')(nav);
 
 
@@ -49,6 +49,7 @@ app.get('/', function (req, res) {
         title: 'home', nav: nav
     });
 });
+
 
 app.listen(PORT, function (err) {
     console.log('Server is Listening on PORT ' + PORT);

@@ -28,12 +28,7 @@
           </div>
         </div>
         <!-- /cont -->
-
-
-
       </div>
-
-
       <div class="container">
         <div class="row">
 
@@ -41,7 +36,6 @@
 
             <div class="panel">
               <div class="panel-body">
-
 
                 <% for(var i =0; i<events.length; i++) {%>
                   <!--events-->
@@ -56,8 +50,12 @@
                         <div class="col-xs-9">
                           <h4><span class="label label-default"><%=events[i].category %></span></h4>
                           <h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><a href="/Events/<%=events[i]._id%>" class="text-muted">Read More</a></small>
-                  </h4></div>
+                          <small style="font-family:courier,'new courier';" class="text-muted"><a href="/Events/<%=events[i]._id%>" class="text-muted">Read More</a></small>
+                          </h4>
+                          <h4>
+                          <small style="font-family:courier,'new courier';"><a href="/add">Participate</a></small>
+                          </h4>
+                        </div>
                         <div class="col-xs-3"></div>
                       </div>
                       <br><br>
@@ -67,7 +65,7 @@
                   <% } %>
                     <!-- /events-->
 
-                    <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <a href="/" class="btn btn-primary pull-right btnNext">More<i class="glyphicon glyphicon-chevron-right"></i></a>
 
 
               </div>
