@@ -10,12 +10,15 @@ var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-
+var path = require('path');
+var redirect;
 var router = function (nav, app) {
     // ===========================Passport Authentication ============================================================
-    // This strategy is used for Login
+    // This strategy is used for Register
     var localRegisterInit = function (req, email, password, callback) {
-        User.findOne({ "local.email": email }, function (err, user) {
+        User.findOne({
+            "local.email": email
+        }, function (err, user) {
             if (err) {
                 return callback(err);
             }
@@ -28,6 +31,7 @@ var router = function (nav, app) {
             var newUser = new User();
             newUser.local.email = email;
             newUser.local.password = newUser.hashPassword(password);
+            newUser.local.category = req.body.category;
 
             newUser.save(function (err) {
                 if (err) {
@@ -39,18 +43,26 @@ var router = function (nav, app) {
         });
     };
 
+
     // This strategy is used for LocalLogin
     var localLoginInit = function (req, email, password, callback) {
-        User.findOne({ "local.email": email }, function (err, user) {
+        User.findOne({
+            "local.email": email
+        }, function (err, user) {
             if (err) {
                 return callback(err);
             }
-
+            console.log('user found');
             if (!user || !user.validatePassword(password)) {
                 // TODO: supply generic message
+
                 return callback(null, false);
             }
-
+            //if (user.local.category !== req.body.category) {
+            //    return callback(null, false);
+            //}
+            //redirect logic
+            redirect = user.local.category;
             return callback(null, user);
         });
     };
@@ -86,15 +98,16 @@ var router = function (nav, app) {
         });
     });
 
-// ======================================End Passport Authentication =============================
+    // ======================================End Passport Authentication =============================
 
-    userRouter.route('/login')
-        .get(function (req, res) {
-            res.render('login', {
-                title: 'Login',
-                nav: nav
-            });
+
+    app.get('/login', function (req, res) {
+        res.render('login', {
+            title: 'Login',
+            nav: nav,
+            user: req.user
         });
+    });
     app.post('/login',
         passport.authenticate('local-login', {
             successRedirect: '/',
@@ -106,7 +119,8 @@ var router = function (nav, app) {
     app.get("/register", function (req, res) {
         res.render('register', {
             title: 'Sign Up',
-            nav: nav
+            nav: nav,
+            user: req.user
         });
     });
     app.post('/register',
@@ -116,6 +130,26 @@ var router = function (nav, app) {
 
         })
     );
+    app.get('/logout', function (req, res) {
+        console.log('logging out');
+        req.logout();
+        res.redirect('/');
+    });
+
+    app.get('/about', function (req, res) {
+        res.render('about', {
+            title: 'About',
+            nav: nav,
+            user: req.user
+        });
+    });
+    app.get('/contact', function (req, res) {
+        res.render('contact', {
+            title: 'Contact',
+            nav: nav,
+            user: req.user
+        });
+    });
 
     // router.post("/register", authConfig.localRegister);
     return userRouter;

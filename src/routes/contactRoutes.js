@@ -1,15 +1,17 @@
 var express = require('express');
+var auth=require('../middlewares');
 var contactRouter = express.Router();
 
 
 var router = function (nav) {
     /* Get All Events from DB*/
     contactRouter.route('/Contact')
-        .get(function (req, res) {
+        .get(auth.requiresLogin,function (req, res) {
 
             res.render('contact', {
                 title: 'Contact Us',
-                nav: nav
+                nav: nav,
+                user:req.user
             });
         });
 
@@ -18,7 +20,8 @@ var router = function (nav) {
 
             res.render('about', {
                 title: 'About',
-                nav: nav
+                nav: nav,
+                user:req.user
             });
         });
 

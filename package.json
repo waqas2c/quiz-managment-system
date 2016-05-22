@@ -1,7 +1,6 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -39,5 +38,14 @@
     "gulp-nodemon": "^2.0.4",
     "jshint-stylish": "^2.0.1",
     "wiredep": "^2.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaiderMalik12/online-competition.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HaiderMalik12/online-competition/issues"
+  },
+  "homepage": "https://github.com/HaiderMalik12/online-competition#readme",
+  "description": ""
 }

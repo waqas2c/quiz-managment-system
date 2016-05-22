@@ -3,98 +3,81 @@
 
 <% include ../views/partials/head.ejs %>
 
-    <body>
+<body>
 
-        <% include ../views/partials/header.ejs %>
+<% include ../views/partials/header.ejs %>
 
-            <div id="masthead">
-                <div class="container">
+<div id="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>eCompetition
+                    <p class="lead"></p>
+                </h1>
+            </div>
+
+        </div>
+    </div>
+    <!-- /cont -->
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="panel">
+                <div class="panel-body">
+
+                    <% for(var i = 0; i < judges.length; i++) { %>
+                    <!--/judges-->
                     <div class="row">
-                        <div class="col-md-7">
-                            <h1>eCompetition
-          <p class="lead"></p>
-        </h1>
+                        <br>
+
+                        <div class="col-md-2 col-sm-3 text-center">
+                            <a class="story-title" href="#"><img alt="" src="<%= judges[i].local.img %>"
+                                                                 style="width:100px;height:100px"
+                                                                 alt="Judge Picture"
+                                                                 class="img-circle"></a>
                         </div>
-                        
-                    </div>
-                </div>
-                <!-- /cont -->
+                        <div class="col-md-10 col-sm-9">
+                            <h3><%= judges[i].local.name %></h3>
 
-            </div>
-
-
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <div class="panel">
-                            <div class="panel-body">
-
-
-                                <% for(var i= 0; i<judges.length; i++) {%>
-                                    <!--/judges-->
-                                    <div class="row">
-                                        <br>
-                                        <div class="col-md-2 col-sm-3 text-center">
-                                            <a class="story-title" href="#"><img alt="" src="<%=judges[i].src %>" style="width:100px;height:100px"
-                                                    class="img-circle"></a>
-                                        </div>
-                                        <div class="col-md-10 col-sm-9">
-                                            <h3><%=judges[i].name %></h3>
-                                            <div class="row">
-                                                <div class="col-xs-9">
-                                                    <h4><span class="label label-default"><%= judges[i].profession %></span></h4>
-                                                    <h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><a href="#" class="text-muted"></a></small>
-                  </h4></div>
-                                                <div class="col-xs-3"></div>
-                                            </div>
-                                            <br><br>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <% } %>
-
-                                        <!--/judges-->
-
-
-                                        <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-
-
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <h4><span class="label label-default"><%= judges[i].local.occupation %></span></h4>
+                                </div>
+                                <div class="col-xs-3"></div>
                             </div>
+                            <br><br>
                         </div>
-
-
-
                     </div>
-                    <!--/col-12-->
+                    <hr>
+                    <% } %>
+
+                    <!--/judges-->
+
+
+                    <a href="/" class="btn btn-primary pull-right btnNext">More <i
+                                class="glyphicon glyphicon-chevron-right"></i></a>
+
+
                 </div>
             </div>
 
 
-            <hr>
+        </div>
+        <!--/col-12-->
+    </div>
+</div>
 
-            <div class="container" id="footer">
-                <div class="row">
-                    <div class="col col-sm-12">
 
-                        <h1>Follow Us</h1>
-                        <div class="btn-group">
-                            <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-                            <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-                            <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
-                        </div>
+<hr>
 
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <hr>
-
-            <% include ../views/partials/footer.ejs %>
-    </body>
+<% include ../views/partials/footer.ejs %>
+<% include ../views/partials/jsdefaults.ejs %>
+</body>
 
 </html>

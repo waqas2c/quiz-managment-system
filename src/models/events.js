@@ -20,6 +20,18 @@ var eventModel = new Schema({
     },
     imgUrl: {
         type: String
+    },
+    desc:{
+        type:String
+    },
+    participents: [{
+        type:Schema.Types.ObjectId,
+        ref:'Participant'
+    }],
+    judge:{
+        type:Schema.Types.ObjectId,
+        ref:'User'
+
     }
 });
 
