@@ -41,11 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HaiderMalik12/online-competition.git"
-  },
-  "bugs": {
-    "url": "https://github.com/HaiderMalik12/online-competition/issues"
-  },
-  "homepage": "https://github.com/HaiderMalik12/online-competition#readme",
-  "description": ""
+    "url": "git+https://github.com/waqas2c/quiz-managment-system.git"
+  }
+
 }
